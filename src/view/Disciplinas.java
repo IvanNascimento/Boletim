@@ -302,7 +302,7 @@ public class Disciplinas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
   private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-    Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
+    Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
     dados.editUser(this.UserId, this.User);
     
     this.dispose();

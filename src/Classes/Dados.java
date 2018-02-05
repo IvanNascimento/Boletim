@@ -64,11 +64,19 @@ public class Dados {
       this.input = new ObjectInputStream(new FileInputStream(new File(this.caminho)));
     } catch (IOException ex) {
       Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      ArrayList a = new ArrayList();
+      a.add(new Usuario("Admim", "admim"));
+      this.Salvar(a);
+      this.Carregar();
     }
     try {
+      while(true){
         ArrayList<Usuario> objeto = (ArrayList<Usuario>) input.readObject();
         this.dados = objeto;
-    } catch (ClassNotFoundException | IOException ex) {    
+        if(input.read() == -1) break;
+      }
+    } catch (ClassNotFoundException | IOException ex) {
+      this.dados = new ArrayList<Usuario>();
       Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
     }
     try {

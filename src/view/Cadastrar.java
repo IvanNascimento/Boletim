@@ -106,7 +106,7 @@ public class Cadastrar extends javax.swing.JDialog {
             this.senha = Password.getText();
             this.ok = true;
 
-            Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
+            Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
             Usuario usuario = new Usuario(login, senha);
             this.User = usuario;
             dados.addUsuario(usuario);

@@ -13,13 +13,16 @@ public class Login extends javax.swing.JDialog {
   public boolean ok = false;
   public Usuario User;
   public int UserId;
-  Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
+  Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
   
   private void Altenticar(String login, String senha){
     ArrayList<Usuario> a = new ArrayList();
     a = dados.Carregar();
     if(a.isEmpty()){
-        Acesso.setText("Sem usuarios cadastrados");
+      Acesso.setText("Sem usuarios cadastrados");
+    }else if(a == null){
+      Acesso.setText("Sem usuarios cadastrados");
+      a = new ArrayList<Usuario>();
     }
     for(int i=0;i<a.size();i++){
         Usuario u = a.get(i);

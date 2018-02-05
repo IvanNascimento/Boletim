@@ -307,7 +307,7 @@ public class DadosUser extends javax.swing.JInternalFrame {
   private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
     
     Aluno dados = this.User.getDados();
-    Dados d = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
+    Dados d = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
     if(FristNameText.getText().equals("") || LastNameText.getText().equals("") || NascimentoDate.getText().equals("") || CPFNumber.getText().equals("") || SexoSelect.getSelectedItem().equals("") || EstadoNameText.getText().equals("") || CidadeNameText.getText().equals("") || BairroNameText.getText().equals("") || RuaNameText.getText().equals("") || NumCasaNumberText.getText().equals("")){
       JOptionPane.showMessageDialog(null, "Todos os campos obrigatorios");
     }else{
