@@ -36,7 +36,6 @@ public class Dados {
   }
   
   public void Salvar(ArrayList<Usuario> a) {
-    System.out.println(a);
     try {
       this.output = new ObjectOutputStream(new FileOutputStream(new File(this.caminho)));
     } catch (IOException ex) {
@@ -45,7 +44,6 @@ public class Dados {
     
     try {
       output.writeObject(a);
-      System.out.println("Ok");
     } catch (IOException ex) {
       Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -68,11 +66,8 @@ public class Dados {
       Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
     }
     try {
-      while(true){
-        if(input.read() == -1) break;
         ArrayList<Usuario> objeto = (ArrayList<Usuario>) input.readObject();
         this.dados = objeto;
-      }
     } catch (ClassNotFoundException | IOException ex) {    
       Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -87,6 +82,12 @@ public class Dados {
   public void addUsuario(Usuario u){
     ArrayList<Usuario> list = this.Carregar();
     list.add(u);
+    this.Salvar(list);
+    System.out.println(this.Carregar());
+  }
+  public void editUser(int i, Usuario user){
+    ArrayList<Usuario> list = this.Carregar();
+    list.set(i, user);
     this.Salvar(list);
   }
 }

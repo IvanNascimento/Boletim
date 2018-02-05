@@ -27,7 +27,18 @@ public class Pessoa implements Serializable{
       private String rua;
       private String numeroCasa;
   // Construct
-    public Pessoa(){}
+    public Pessoa(){
+        this.fristName = "";
+        this.lastName = "";
+        this.cpf = "";
+        this.sexo = "";
+        this.estado = "";
+        this.cidade = "";
+        this.bairro = "";
+        this.rua = "";
+        this.numeroCasa = "";
+        this.nascimento = new Date();
+    }
     public Pessoa(String fristName, String lastName, String nascimento, String cpf, String sexo, String estado, String cidade, String bairro, String rua, String numero) throws ParseException{
       this.fristName = fristName;
       this.lastName = lastName;
@@ -70,16 +81,19 @@ public class Pessoa implements Serializable{
         this.cpf = cpf;
       }
   // Gets
-      public String getNome(){
-        return this.fristName + " " + this.lastName;
+      public Object[] getNome(){
+        Object[] o = {this.fristName,this.lastName};
+        return o;
       }
       public String getNascimento(){
         Calendar nascimento = Calendar.getInstance();
         nascimento.setTime(this.nascimento);
-        
-        return nascimento.get(Calendar.DAY_OF_MONTH)+"/"+(nascimento.get(Calendar.MONTH)+1)+"/"+nascimento.get(Calendar.YEAR);
+        if(nascimento.get(Calendar.MONTH)+1 < 10){
+            return ""+nascimento.get(Calendar.DAY_OF_MONTH)+"0"+(nascimento.get(Calendar.MONTH)+1)+nascimento.get(Calendar.YEAR);
+        }
+        return ""+nascimento.get(Calendar.DAY_OF_MONTH)+(nascimento.get(Calendar.MONTH)+1)+nascimento.get(Calendar.YEAR);
       }
-      public int getIdade() throws ParseException{
+      public int getIdade(){
         Calendar hoje = Calendar.getInstance();
         Calendar nascimento = Calendar.getInstance();
         nascimento.setTime(this.nascimento);
@@ -118,11 +132,7 @@ public class Pessoa implements Serializable{
   public String toString() {
     String msm = "";
     msm += "Nome: "+this.getNome() + "\n";
-        try {
-          msm += "Idade: "+this.getIdade() + "\n";
-        } catch (ParseException ex) {
-          Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    msm += "Idade: "+this.getIdade() + "\n";
     msm += "Sexo: "+this.getSexo() + "\n";
     msm += "CPF: "+this.getCPF() + "\n";
     ArrayList list = this.getEndereco();

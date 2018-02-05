@@ -12,23 +12,29 @@ public class Login extends javax.swing.JDialog {
   public String senha;
   public boolean ok = false;
   public Usuario User;
+  public int UserId;
   Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
   
   private void Altenticar(String login, String senha){
     ArrayList<Usuario> a = new ArrayList();
     a = dados.Carregar();
-    for(Usuario u: a){
-      if(UserName.getText().equals(u.getLogin()) && Password.getText().equals(u.getSenha())){
-        login = UserName.getText();
-        senha = Password.getText();
-        this.User = u;
-        ok = true;
-      
-      this.dispose();
-      
-    }else{
-      Acesso.setText("Acesso Negado!!");
+    if(a.isEmpty()){
+        Acesso.setText("Sem usuarios cadastrados");
     }
+    for(int i=0;i<a.size();i++){
+        Usuario u = a.get(i);
+        if(UserName.getText().equals(u.getLogin()) && Password.getText().equals(u.getSenha())){
+            this.login = UserName.getText();
+            this.senha = Password.getText();
+            this.User = u;
+            this.UserId = i;
+            ok = true;
+      
+        this.dispose();
+      
+        }else{
+            Acesso.setText("Acesso Negado!!");
+        }
     }
   }
   

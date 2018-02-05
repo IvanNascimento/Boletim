@@ -1,11 +1,8 @@
 package view;
 
 import Classes.Aluno;
-import Classes.Pessoa;
+import Classes.Dados;
 import Classes.Usuario;
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class DadosUser extends javax.swing.JInternalFrame {
@@ -21,10 +18,27 @@ public class DadosUser extends javax.swing.JInternalFrame {
   public String Rua;
   public String NumCasa;
   public Usuario User;
+  public int UserId;
+
+  private void init(Usuario user){
+      Aluno dados = user.getDados();
+      
+      FristNameText.setText((String )dados.getNome()[0]);
+      LastNameText.setText((String)dados.getNome()[1]);
+      NascimentoDate.setText(dados.getNascimento());
+      CPFNumber.setText(dados.getCPF());
+      EstadoNameText.setText((String) dados.getEndereco().get(0));
+      CidadeNameText.setText((String) dados.getEndereco().get(1));
+      BairroNameText.setText((String) dados.getEndereco().get(2));
+      RuaNameText.setText((String) dados.getEndereco().get(3));
+      NumCasaNumberText.setText((String) dados.getEndereco().get(4));
+  }
   
-  public DadosUser(Usuario user) {
+  public DadosUser(Usuario user, int userId) {
     initComponents();
     this.User = user;
+    this.UserId = userId;
+    this.init(user);
   }
 
   @SuppressWarnings("unchecked")
@@ -59,8 +73,6 @@ public class DadosUser extends javax.swing.JInternalFrame {
         SexoSelect = new javax.swing.JComboBox<>();
         NascimentoDate = new javax.swing.JFormattedTextField();
         CPFNumber = new javax.swing.JFormattedTextField();
-
-        setClosable(true);
 
         Nome.setBackground(new java.awt.Color(204, 204, 204));
         Nome.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Dados"));
@@ -295,7 +307,7 @@ public class DadosUser extends javax.swing.JInternalFrame {
   private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
     
     Aluno dados = this.User.getDados();
-    
+    Dados d = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
     if(FristNameText.getText().equals("") || LastNameText.getText().equals("") || NascimentoDate.getText().equals("") || CPFNumber.getText().equals("") || SexoSelect.getSelectedItem().equals("") || EstadoNameText.getText().equals("") || CidadeNameText.getText().equals("") || BairroNameText.getText().equals("") || RuaNameText.getText().equals("") || NumCasaNumberText.getText().equals("")){
       JOptionPane.showMessageDialog(null, "Todos os campos obrigatorios");
     }else{
@@ -305,6 +317,9 @@ public class DadosUser extends javax.swing.JInternalFrame {
       dados.setSexo(SexoSelect.getSelectedItem().toString());
       dados.setEndereco(EstadoNameText.getText(), CidadeNameText.getText(), BairroNameText.getText(), RuaNameText.getText(), NumCasaNumberText.getText());
       this.User.setDados(dados);
+      
+      d.editUser(UserId, User);
+      
       this.dispose();
     }
   }//GEN-LAST:event_OkActionPerformed

@@ -9,10 +9,10 @@ public class Disciplina implements Serializable{
     private String professor;
     private String nome;
   // Constructs
-    public Disciplina(){}
     public Disciplina(String nome, String professor){
       this.nome = nome;
       this.professor = professor;
+      this.notas = new ArrayList<Nota>();
     }
     public Disciplina(String nome, String professor, ArrayList<Nota> notas){
       this.nome = nome;
@@ -48,21 +48,5 @@ public class Disciplina implements Serializable{
     }
     public void limparNotas(){
       this.notas.clear();
-    }
-    public ArrayList getMedia(){
-      ArrayList medias = new ArrayList();
-      for(int j=1;j<5;j++){
-        double media = 0;
-        int i = 0;
-        for(Nota y: notas){
-          if(y.getBimestre() == j){
-            i++;
-            media += y.getNota();
-          }
-          media /= i;
-        }
-        medias.add(media);
-      }
-      return medias;
     }
 }

@@ -7,7 +7,6 @@ public class Nota implements Serializable{
     private int nota;
     private int bimestre;
   // Constructs
-    public Nota(){}
     public Nota(int bimestre, int nota){
       this.bimestre = bimestre;
       this.nota = nota;

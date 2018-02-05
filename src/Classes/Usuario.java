@@ -7,7 +7,6 @@ public class Usuario implements Serializable{
   private String senha;
   private Aluno dados;
   
-  public Usuario(){}
   public Usuario(String login, String senha){
     this.login = login;
     this.senha = senha;
@@ -34,7 +33,7 @@ public class Usuario implements Serializable{
 
   @Override
   public String toString() {
-    return "Login: "+this.getLogin()+"\tSenha: "+getSenha();
+    return "Login: "+this.getLogin()+"\tSenha: "+this.getSenha()+"\tNotas: "+this.getDados();
   }
   
 }

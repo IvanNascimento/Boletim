@@ -15,7 +15,12 @@ public class Aluno extends Pessoa implements Serializable{
     // Curso
       private String curso;
   // Construct
-    public Aluno(){}
+    public Aluno(){
+        this.ano = 0;
+        this.escola = "";
+        this.curso = "Não definido";
+        this.disciplinas = new ArrayList<Disciplina>();
+    }
     public Aluno(int ano, String escola){
       this.ano = ano;
       this.escola = escola;

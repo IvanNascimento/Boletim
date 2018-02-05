@@ -1,11 +1,13 @@
 package view;
 
+import Classes.Dados;
 import Classes.Usuario;
-import javax.swing.JOptionPane;
 
 public class Janela extends javax.swing.JFrame {
   
   private Usuario User;
+  private int UserId;
+  private Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
 
   public Janela() {
     initComponents();
@@ -156,7 +158,7 @@ public class Janela extends javax.swing.JFrame {
   }//GEN-LAST:event_CadastrarUsuarioActionPerformed
 
   private void EditarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarDadosActionPerformed
-    DadosUser DadosUsuario = new DadosUser(this.User);
+    DadosUser DadosUsuario = new DadosUser(dados.Carregar().get(this.UserId),this.UserId);
     Desktop.add(DadosUsuario);
     DadosUsuario.setVisible(true);
     this.User = DadosUsuario.User;
@@ -168,8 +170,11 @@ public class Janela extends javax.swing.JFrame {
     
     if(login.ok){
       this.User = login.User;
+      this.UserId = login.UserId;
+      
       Desktop.setVisible(true);
       BarraDeMenu.setVisible(true);
+      
       LoginButton.setVisible(false);
       Registrar.setVisible(false);
     }
@@ -185,14 +190,18 @@ public class Janela extends javax.swing.JFrame {
     
     if(login.ok){
       this.User = login.User;
+      this.UserId = login.UserId;
+      
       Desktop.setVisible(true);
       BarraDeMenu.setVisible(true);
+      
       LoginButton.setVisible(false);
+      Registrar.setVisible(false);
     }
   }//GEN-LAST:event_LoginButtonKeyPressed
 
   private void EditarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarMateriasActionPerformed
-    Disciplinas disciplinas = new Disciplinas(User.getDados().getDisciplinas());
+    Disciplinas disciplinas = new Disciplinas(dados.Carregar().get(this.UserId), this.UserId);
     Desktop.add(disciplinas);
     disciplinas.setVisible(true);
   }//GEN-LAST:event_EditarMateriasActionPerformed
@@ -203,9 +212,13 @@ public class Janela extends javax.swing.JFrame {
         
         if(cadastro.ok){
           this.User = cadastro.User;
+          this.UserId = cadastro.UserId;
+          
           Desktop.setVisible(true);
           BarraDeMenu.setVisible(true);
+          
           LoginButton.setVisible(false);
+          Registrar.setVisible(false);
         }
     }//GEN-LAST:event_RegistrarActionPerformed
 

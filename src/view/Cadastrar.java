@@ -9,6 +9,7 @@ public class Cadastrar extends javax.swing.JDialog {
     public String senha;
     public boolean ok;
     public Usuario User;
+    public int UserId;
     
     public Cadastrar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -101,15 +102,15 @@ public class Cadastrar extends javax.swing.JDialog {
     private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
         if(Password.getText().equals(PasswordConfirm.getText())){
 
-            login = UserName.getText();
-            senha = Password.getText();
-            ok = true;
+            this.login = UserName.getText();
+            this.senha = Password.getText();
+            this.ok = true;
 
             Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
             Usuario usuario = new Usuario(login, senha);
-            User = usuario;
+            this.User = usuario;
             dados.addUsuario(usuario);
-
+            this.UserId = dados.Carregar().size()-1;
             this.dispose();
         }
 
