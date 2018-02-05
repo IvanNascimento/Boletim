@@ -11,6 +11,7 @@ public class Login extends javax.swing.JDialog {
   public String login;
   public String senha;
   public boolean ok = false;
+  public Usuario User;
   Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
   
   private void Altenticar(String login, String senha){
@@ -18,9 +19,10 @@ public class Login extends javax.swing.JDialog {
     a = dados.Carregar();
     for(Usuario u: a){
       if(UserName.getText().equals(u.getLogin()) && Password.getText().equals(u.getSenha())){
-      login = UserName.getText();
-      senha = Password.getText();
-      ok = true;
+        login = UserName.getText();
+        senha = Password.getText();
+        this.User = u;
+        ok = true;
       
       this.dispose();
       
@@ -36,112 +38,99 @@ public class Login extends javax.swing.JDialog {
   }
 
   @SuppressWarnings("unchecked")
-  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    Password = new javax.swing.JPasswordField();
-    Ok = new javax.swing.JButton();
-    jLabel1 = new javax.swing.JLabel();
-    jLabel2 = new javax.swing.JLabel();
-    Cadastrar = new javax.swing.JButton();
-    UserName = new javax.swing.JTextField();
-    Acesso = new javax.swing.JLabel();
+        Password = new javax.swing.JPasswordField();
+        Ok = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        UserName = new javax.swing.JTextField();
+        Acesso = new javax.swing.JLabel();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-    addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        formKeyPressed(evt);
-      }
-    });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
-    Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-    Password.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        PasswordActionPerformed(evt);
-      }
-    });
-    Password.addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        PasswordKeyPressed(evt);
-      }
-    });
+        Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordActionPerformed(evt);
+            }
+        });
+        Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordKeyPressed(evt);
+            }
+        });
 
-    Ok.setText("Ok");
-    Ok.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    Ok.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        OkActionPerformed(evt);
-      }
-    });
-    Ok.addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        OkKeyPressed(evt);
-      }
-    });
+        Ok.setText("Ok");
+        Ok.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkActionPerformed(evt);
+            }
+        });
+        Ok.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                OkKeyPressed(evt);
+            }
+        });
 
-    jLabel1.setText("User Name: ");
+        jLabel1.setText("User Name: ");
 
-    jLabel2.setText("Senha: ");
+        jLabel2.setText("Senha: ");
 
-    Cadastrar.setText("Cadastrar-se");
-    Cadastrar.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        CadastrarActionPerformed(evt);
-      }
-    });
+        UserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        UserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserNameActionPerformed(evt);
+            }
+        });
+        UserName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UserNameKeyPressed(evt);
+            }
+        });
 
-    UserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-    UserName.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        UserNameActionPerformed(evt);
-      }
-    });
-    UserName.addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        UserNameKeyPressed(evt);
-      }
-    });
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UserName)
+                    .addComponent(Password)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                    .addComponent(Acesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Acesso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(Ok)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGap(118, 118, 118)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addComponent(Cadastrar)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Ok))
-          .addComponent(UserName)
-          .addComponent(Password)
-          .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-          .addComponent(Acesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        .addContainerGap(124, Short.MAX_VALUE))
-    );
-    layout.setVerticalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addContainerGap()
-        .addComponent(Acesso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(18, 18, 18)
-        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(32, 32, 32)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(Ok)
-          .addComponent(Cadastrar))
-        .addContainerGap(33, Short.MAX_VALUE))
-    );
-
-    pack();
-  }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
   private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
     this.Altenticar(UserName.getText(), Password.getText());
@@ -176,17 +165,6 @@ public class Login extends javax.swing.JDialog {
   private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_UserNameActionPerformed
-
-  private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-    login = UserName.getText();
-    senha = Password.getText();
-    ok = true;
-    
-    Usuario usuario = new Usuario(login, senha);
-    dados.addUsuario(usuario);
-
-    this.dispose();
-  }//GEN-LAST:event_CadastrarActionPerformed
 
   public static void main(String args[]) {
     /* Set the Nimbus look and feel */
@@ -227,13 +205,12 @@ public class Login extends javax.swing.JDialog {
     });
   }
   
-  // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JLabel Acesso;
-  private javax.swing.JButton Cadastrar;
-  private javax.swing.JButton Ok;
-  private javax.swing.JPasswordField Password;
-  private javax.swing.JTextField UserName;
-  private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel2;
-  // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Acesso;
+    private javax.swing.JButton Ok;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField UserName;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    // End of variables declaration//GEN-END:variables
 }

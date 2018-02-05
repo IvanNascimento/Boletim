@@ -25,6 +25,12 @@ public class Usuario implements Serializable{
   public String getSenha(){
     return this.senha;
   }
+  public void setDados(Aluno a){
+    this.dados = a;
+  }
+  public Aluno getDados(){
+    return this.dados;
+  }
 
   @Override
   public String toString() {

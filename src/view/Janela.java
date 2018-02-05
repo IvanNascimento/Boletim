@@ -1,13 +1,17 @@
 package view;
 
+import Classes.Usuario;
 import javax.swing.JOptionPane;
 
 public class Janela extends javax.swing.JFrame {
   
+  private Usuario User;
+
   public Janela() {
     initComponents();
     Desktop.setVisible(false);
     BarraDeMenu.setVisible(false);
+    
   }
 
   @SuppressWarnings("unchecked")
@@ -16,6 +20,7 @@ public class Janela extends javax.swing.JFrame {
 
         Desktop = new javax.swing.JDesktopPane();
         LoginButton = new javax.swing.JButton();
+        Registrar = new javax.swing.JButton();
         BarraDeMenu = new javax.swing.JMenuBar();
         Opcoes = new javax.swing.JMenu();
         CadastrarUsuario = new javax.swing.JMenuItem();
@@ -36,6 +41,7 @@ public class Janela extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(700, 600));
 
         Desktop.setBackground(new java.awt.Color(51, 0, 204));
+        Desktop.setFocusable(false);
 
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
@@ -45,17 +51,15 @@ public class Janela extends javax.swing.JFrame {
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 324, Short.MAX_VALUE)
         );
 
         LoginButton.setText("Login");
         LoginButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        LoginButton.setIconTextGap(1);
         LoginButton.setMargin(new java.awt.Insets(20, 14, 20, 50));
         LoginButton.setPreferredSize(new java.awt.Dimension(100, 50));
         LoginButton.setRequestFocusEnabled(false);
         LoginButton.setRolloverEnabled(false);
-        LoginButton.setVerifyInputWhenFocusTarget(false);
         LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginButtonActionPerformed(evt);
@@ -64,6 +68,13 @@ public class Janela extends javax.swing.JFrame {
         LoginButton.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 LoginButtonKeyPressed(evt);
+            }
+        });
+
+        Registrar.setText("Registrar-se");
+        Registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarActionPerformed(evt);
             }
         });
 
@@ -115,19 +126,23 @@ public class Janela extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Desktop)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(131, Short.MAX_VALUE)
-                    .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addContainerGap(132, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Desktop)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(135, Short.MAX_VALUE)
-                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, Short.MAX_VALUE)
-                    .addContainerGap(137, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(63, 63, 63)
+                    .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                    .addGap(70, 70, 70)
+                    .addComponent(Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addGap(66, 66, 66)))
         );
 
         pack();
@@ -135,15 +150,16 @@ public class Janela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
   private void CadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuarioActionPerformed
-    Cadastrar TelaCadastro = new Cadastrar();
+    Cadastrar TelaCadastro = new Cadastrar(this, true);
     Desktop.add(TelaCadastro);
     TelaCadastro.setVisible(true);
   }//GEN-LAST:event_CadastrarUsuarioActionPerformed
 
   private void EditarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarDadosActionPerformed
-    DadosUser DadosUsuario = new DadosUser();
+    DadosUser DadosUsuario = new DadosUser(this.User);
     Desktop.add(DadosUsuario);
     DadosUsuario.setVisible(true);
+    this.User = DadosUsuario.User;
   }//GEN-LAST:event_EditarDadosActionPerformed
 
   private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
@@ -151,9 +167,11 @@ public class Janela extends javax.swing.JFrame {
     login.setVisible(true);
     
     if(login.ok){
+      this.User = login.User;
       Desktop.setVisible(true);
       BarraDeMenu.setVisible(true);
       LoginButton.setVisible(false);
+      Registrar.setVisible(false);
     }
   }//GEN-LAST:event_LoginButtonActionPerformed
 
@@ -166,6 +184,7 @@ public class Janela extends javax.swing.JFrame {
     login.setVisible(true);
     
     if(login.ok){
+      this.User = login.User;
       Desktop.setVisible(true);
       BarraDeMenu.setVisible(true);
       LoginButton.setVisible(false);
@@ -173,10 +192,22 @@ public class Janela extends javax.swing.JFrame {
   }//GEN-LAST:event_LoginButtonKeyPressed
 
   private void EditarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarMateriasActionPerformed
-    Disciplinas disciplinas = new Disciplinas();
+    Disciplinas disciplinas = new Disciplinas(User.getDados().getDisciplinas());
     Desktop.add(disciplinas);
     disciplinas.setVisible(true);
   }//GEN-LAST:event_EditarMateriasActionPerformed
+
+    private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
+        Cadastrar cadastro = new Cadastrar(this, true);
+        cadastro.setVisible(true);
+        
+        if(cadastro.ok){
+          this.User = cadastro.User;
+          Desktop.setVisible(true);
+          BarraDeMenu.setVisible(true);
+          LoginButton.setVisible(false);
+        }
+    }//GEN-LAST:event_RegistrarActionPerformed
 
   public static void main(String args[]) {
         
@@ -187,13 +218,7 @@ public class Janela extends javax.swing.JFrame {
           break;
         }
       }
-    } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(Janela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(Janela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(Janela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
       java.util.logging.Logger.getLogger(Janela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
     //</editor-fold>
@@ -213,6 +238,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JMenuItem EditarMaterias;
     private javax.swing.JButton LoginButton;
     private javax.swing.JMenu Opcoes;
+    private javax.swing.JButton Registrar;
     private javax.swing.JMenuItem Sair;
     // End of variables declaration//GEN-END:variables
 }

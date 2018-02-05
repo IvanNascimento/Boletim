@@ -8,13 +8,23 @@ import javax.swing.table.DefaultTableModel;
 
 public class Disciplinas extends javax.swing.JInternalFrame {
 
-  public Disciplinas() {
+  public ArrayList<Disciplina> disciplinas;
+  
+  private void Init(ArrayList<Disciplina> disciplinas){
+    DefaultTableModel modeloDisciplina = (DefaultTableModel) Tabela.getModel();
+    DefaultTableModel modeloNota = (DefaultTableModel) Notas.getModel();
+    for(int i=0;i<disciplinas.size();i++){
+      ArrayList<Nota> medias = disciplinas.get(i).getNotas();
+      // for para ordenar as medias
+      Object[] dados = {disciplinas.get(i).getNome(), disciplinas.get(i).getProfessor(), medias.get(0).getNota(), medias.get(1).getNota(), medias.get(2).getNota(), medias.get(3).getNota()};
+      modeloDisciplina.addRow(dados);
+    }
+  }
+  
+  public Disciplinas(ArrayList<Disciplina> disciplinas) {
     initComponents();
-//    DefaultTableModel modeloDisciplina = (DefaultTableModel) Tabela.getModel();;
-//    ArrayList<Nota> medias = new ArrayList<Nota>();
-//    Disciplina d = new Disciplina(NomeDisciplina.getText(), NomeProfessor.getText(), medias);
-//    Object[] dados = {NomeDisciplina.getText(), NomeProfessor.getText(), medias.get(0).getNota(), medias.get(1).getNota(), medias.get(2).getNota(), medias.get(3).getNota()};
-//    modeloDisciplina.addRow(dados);
+    this.disciplinas = disciplinas;
+    this.Init(disciplinas);
   }
 
   @SuppressWarnings("unchecked")

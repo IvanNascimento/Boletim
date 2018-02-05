@@ -74,24 +74,24 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="FName9" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FristNameText8" min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="FristNameText" min="-2" pref="85" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jSeparator41" min="-2" pref="14" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LName9" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LastNameText8" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <Component id="LastNameText" min="-2" pref="144" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="CPF9" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="CPFNumber8" min="-2" pref="109" max="-2" attributes="0"/>
+                                          <Component id="CPFNumber" min="-2" pref="109" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jSeparator45" min="-2" pref="5" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel9" min="-2" pref="53" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="SexoSelect8" min="-2" pref="132" max="-2" attributes="0"/>
+                                          <Component id="SexoSelect" min="-2" pref="132" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -101,11 +101,11 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="DataNascimento9" min="-2" pref="127" max="-2" attributes="0"/>
+                          <Component id="DataNascimento" min="-2" pref="127" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="FormatoDN9" min="-2" pref="70" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="NascimentoDate8" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="NascimentoDate" min="-2" pref="105" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -113,12 +113,12 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="Cidade9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="CidadeNameText8" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="CidadeNameText" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="Estado9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EstadoNameText8" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="EstadoNameText" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -126,12 +126,12 @@
                               <Group type="102" attributes="0">
                                   <Component id="Rua9" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="RuaNameText8" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="RuaNameText" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="NCasa9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="NumCasaNumberText8" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="NumCasaNumberText" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -139,14 +139,14 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Bairro9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="BairroNameText8" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="BairroNameText" min="-2" pref="98" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="Ok8" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Ok" min="-2" pref="89" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -157,33 +157,33 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jSeparator41" alignment="0" max="32767" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                          <Component id="FristNameText8" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="FristNameText" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="FName9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                           <Component id="LName9" alignment="3" max="32767" attributes="0"/>
-                          <Component id="LastNameText8" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="LastNameText" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator42" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" max="-2" attributes="0">
-                      <Component id="FormatoDN9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="NascimentoDate8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="DataNascimento9" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="DataNascimento" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FormatoDN9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="NascimentoDate" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator43" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CPF9" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="jSeparator45" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="CPFNumber8" alignment="1" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jSeparator45" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="CPFNumber" alignment="1" max="32767" attributes="0"/>
+                      <Component id="CPF9" min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
-                      <Component id="SexoSelect8" alignment="0" max="32767" attributes="0"/>
+                      <Component id="SexoSelect" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator44" min="-2" pref="10" max="-2" attributes="0"/>
@@ -191,29 +191,31 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Estado9" alignment="0" pref="23" max="32767" attributes="0"/>
-                          <Component id="EstadoNameText8" min="-2" max="-2" attributes="0"/>
-                          <Component id="RuaNameText8" alignment="0" max="32767" attributes="0"/>
+                          <Component id="EstadoNameText" min="-2" max="-2" attributes="0"/>
+                          <Component id="RuaNameText" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Component id="Rua9" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NumCasaNumberText8" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="NCasa9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="CidadeNameText8" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="Cidade9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="CidadeNameText" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NumCasaNumberText" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="NCasa9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="Cidade9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Bairro9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="BairroNameText8" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="BairroNameText" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="32" max="32767" attributes="0"/>
-                          <Component id="Ok8" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="Ok" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -235,12 +237,12 @@
             <Property name="text" type="java.lang.String" value="Ultimo Nome: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FristNameText8">
+        <Component class="javax.swing.JTextField" name="FristNameText">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FristNameTextActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="LastNameText8">
+        <Component class="javax.swing.JTextField" name="LastNameText">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameTextActionPerformed"/>
           </Events>
@@ -252,7 +254,7 @@
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator42">
         </Component>
-        <Component class="javax.swing.JLabel" name="DataNascimento9">
+        <Component class="javax.swing.JLabel" name="DataNascimento">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Data de Nascimento:"/>
@@ -297,23 +299,23 @@
             <Property name="text" type="java.lang.String" value="Numero da Casa: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="EstadoNameText8">
+        <Component class="javax.swing.JTextField" name="EstadoNameText">
         </Component>
-        <Component class="javax.swing.JTextField" name="CidadeNameText8">
+        <Component class="javax.swing.JTextField" name="CidadeNameText">
         </Component>
-        <Component class="javax.swing.JTextField" name="BairroNameText8">
+        <Component class="javax.swing.JTextField" name="BairroNameText">
         </Component>
-        <Component class="javax.swing.JTextField" name="NumCasaNumberText8">
+        <Component class="javax.swing.JTextField" name="NumCasaNumberText">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NumCasaNumberTextActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="RuaNameText8">
+        <Component class="javax.swing.JTextField" name="RuaNameText">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RuaNameTextActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Ok8">
+        <Component class="javax.swing.JButton" name="Ok">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ok"/>
           </Properties>
@@ -331,7 +333,7 @@
             <Property name="text" type="java.lang.String" value="Sexo: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="SexoSelect8">
+        <Component class="javax.swing.JComboBox" name="SexoSelect">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -345,7 +347,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="NascimentoDate8">
+        <Component class="javax.swing.JFormattedTextField" name="NascimentoDate">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##/##/####" subtype="-1" type="5"/>
@@ -353,7 +355,7 @@
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="CPFNumber8">
+        <Component class="javax.swing.JFormattedTextField" name="CPFNumber">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>

@@ -48,9 +48,13 @@ public class Pessoa implements Serializable{
         this.fristName = fristName;
         this.lastName = lastName;
       }
-      public void setNascimento(String nascimento) throws ParseException{
+      public void setNascimento(String nascimento) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        this.nascimento = sdf.parse(nascimento);
+          try {
+              this.nascimento = sdf.parse(nascimento);
+          } catch (ParseException ex) {
+              Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
+          }
       }
       public void setSexo(String sexo){
         this.sexo = sexo;
