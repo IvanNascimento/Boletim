@@ -1,8 +1,9 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Disciplina {
+public class Disciplina implements Serializable{
   // Dados
     private ArrayList<Nota> notas;
     private String professor;

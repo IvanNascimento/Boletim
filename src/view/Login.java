@@ -1,15 +1,25 @@
 package view;
 
+import Classes.Dados;
+import Classes.Usuario;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Login extends javax.swing.JDialog {
 
   public String login;
   public String senha;
   public boolean ok = false;
+  Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
   
   private void Altenticar(String login, String senha){
-    if(UserName.getText().equals("Admim") && Password.getText().equals("Admim")){
+    ArrayList<Usuario> a = new ArrayList();
+    a = dados.Carregar();
+    for(Usuario u: a){
+      if(UserName.getText().equals(u.getLogin()) && Password.getText().equals(u.getSenha())){
       login = UserName.getText();
       senha = Password.getText();
       ok = true;
@@ -18,6 +28,7 @@ public class Login extends javax.swing.JDialog {
       
     }else{
       Acesso.setText("Acesso Negado!!");
+    }
     }
   }
   
@@ -75,6 +86,11 @@ public class Login extends javax.swing.JDialog {
     jLabel2.setText("Senha: ");
 
     Cadastrar.setText("Cadastrar-se");
+    Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CadastrarActionPerformed(evt);
+      }
+    });
 
     UserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
     UserName.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +178,17 @@ public class Login extends javax.swing.JDialog {
   private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_UserNameActionPerformed
+
+  private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
+    login = UserName.getText();
+    senha = Password.getText();
+    ok = true;
+    
+    Usuario usuario = new Usuario(login, senha);
+    dados.addUsuario(usuario);
+
+    this.dispose();
+  }//GEN-LAST:event_CadastrarActionPerformed
 
   public static void main(String args[]) {
     /* Set the Nimbus look and feel */

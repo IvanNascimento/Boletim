@@ -1,6 +1,8 @@
 package Classes;
 
-public class Nota {
+import java.io.Serializable;
+
+public class Nota implements Serializable{
   // Dados
     private int nota;
     private int bimestre;

@@ -1,9 +1,10 @@
 package Classes;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa implements Serializable{
   // Dados
     // Ano
       private int ano;

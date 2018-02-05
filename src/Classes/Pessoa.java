@@ -1,5 +1,6 @@
 package Classes;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Pessoa {
+public class Pessoa implements Serializable{
   //Dados
     // Nome
       private String fristName;

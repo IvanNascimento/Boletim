@@ -1,6 +1,8 @@
 package Classes;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable{
   private String login;
   private String senha;
   private Aluno dados;
@@ -23,4 +25,10 @@ public class Usuario {
   public String getSenha(){
     return this.senha;
   }
+
+  @Override
+  public String toString() {
+    return "Login: "+this.getLogin()+"\tSenha: "+getSenha();
+  }
+  
 }
