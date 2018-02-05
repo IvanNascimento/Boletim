@@ -1,4 +1,4 @@
-package boletim;
+package Classes;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -14,28 +14,29 @@ public class Aluno extends Pessoa{
     // Curso
       private String curso;
   // Construct
-    Aluno(){}
-    Aluno(int ano, String escola){
+    public Aluno(){}
+    public Aluno(int ano, String escola){
       this.ano = ano;
       this.escola = escola;
       this.curso = "Não definido";
       this.disciplinas = new ArrayList<>();
     }
-    Aluno(int ano, String escola, String curso){
+    public Aluno(int ano, String escola, String curso){
       this.ano = ano;
       this.escola = escola;
       this.curso = curso;
       this.disciplinas = new ArrayList<>();
     }
-    Aluno(int ano, String escola, ArrayList<Disciplina> list){
+    public Aluno(int ano, String escola, ArrayList<Disciplina> list){
       this.ano = ano;
       this.escola = escola;
       this.curso = "Não definido";
       this.disciplinas = list;
     }
-    Aluno(int ano, String escola, String curso, ArrayList<Disciplina> list, String fristName, String lastName, String nascimento, int cpf, String estado, String cidade, String bairro, String rua, int numero) throws ParseException{
+    public Aluno(int ano, String escola, String curso, ArrayList<Disciplina> list, String fristName, String lastName, String nascimento, String cpf, String sexo, String estado, String cidade, String bairro, String rua, String numero) throws ParseException{
       this.setNome(fristName, lastName);
       this.setCPF(cpf);
+      this.setSexo(sexo);
       this.setEndereco(estado, cidade, bairro, rua, numero);
 
       this.setNascimento(nascimento);
