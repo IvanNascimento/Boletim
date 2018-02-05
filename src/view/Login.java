@@ -3,17 +3,15 @@ package view;
 import Classes.Dados;
 import Classes.Usuario;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class Login extends javax.swing.JDialog {
 
   public String login;
   public String senha;
   public boolean ok = false;
-  Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
+  Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
   
   private void Altenticar(String login, String senha){
     ArrayList<Usuario> a = new ArrayList();

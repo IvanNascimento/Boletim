@@ -11,128 +11,128 @@ public class Janela extends javax.swing.JFrame {
   }
 
   @SuppressWarnings("unchecked")
-  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    Desktop = new javax.swing.JDesktopPane();
-    LoginButton = new javax.swing.JButton();
-    BarraDeMenu = new javax.swing.JMenuBar();
-    Opcoes = new javax.swing.JMenu();
-    CadastrarUsuario = new javax.swing.JMenuItem();
-    Sair = new javax.swing.JMenuItem();
-    Editar = new javax.swing.JMenu();
-    EditarDados = new javax.swing.JMenuItem();
-    EditarMaterias = new javax.swing.JMenuItem();
+        Desktop = new javax.swing.JDesktopPane();
+        LoginButton = new javax.swing.JButton();
+        BarraDeMenu = new javax.swing.JMenuBar();
+        Opcoes = new javax.swing.JMenu();
+        CadastrarUsuario = new javax.swing.JMenuItem();
+        Sair = new javax.swing.JMenuItem();
+        Editar = new javax.swing.JMenu();
+        EditarDados = new javax.swing.JMenuItem();
+        EditarMaterias = new javax.swing.JMenuItem();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-    setTitle("Boletim");
-    setAutoRequestFocus(false);
-    setBackground(new java.awt.Color(204, 204, 204));
-    setLocationByPlatform(true);
-    setMaximumSize(new java.awt.Dimension(1800, 1800));
-    setMinimumSize(new java.awt.Dimension(700, 600));
-    setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
-    setPreferredSize(new java.awt.Dimension(700, 600));
-    setSize(new java.awt.Dimension(700, 600));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Boletim");
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(204, 204, 204));
+        setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(1800, 1800));
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
+        setSize(new java.awt.Dimension(700, 600));
 
-    Desktop.setBackground(new java.awt.Color(51, 0, 204));
+        Desktop.setBackground(new java.awt.Color(51, 0, 204));
 
-    javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
-    Desktop.setLayout(DesktopLayout);
-    DesktopLayout.setHorizontalGroup(
-      DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 366, Short.MAX_VALUE)
-    );
-    DesktopLayout.setVerticalGroup(
-      DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 323, Short.MAX_VALUE)
-    );
+        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
+        Desktop.setLayout(DesktopLayout);
+        DesktopLayout.setHorizontalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+        DesktopLayout.setVerticalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 323, Short.MAX_VALUE)
+        );
 
-    LoginButton.setText("Login");
-    LoginButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    LoginButton.setIconTextGap(1);
-    LoginButton.setMargin(new java.awt.Insets(20, 14, 20, 50));
-    LoginButton.setPreferredSize(new java.awt.Dimension(100, 50));
-    LoginButton.setRequestFocusEnabled(false);
-    LoginButton.setRolloverEnabled(false);
-    LoginButton.setVerifyInputWhenFocusTarget(false);
-    LoginButton.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        LoginButtonActionPerformed(evt);
-      }
-    });
-    LoginButton.addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        LoginButtonKeyPressed(evt);
-      }
-    });
+        LoginButton.setText("Login");
+        LoginButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LoginButton.setIconTextGap(1);
+        LoginButton.setMargin(new java.awt.Insets(20, 14, 20, 50));
+        LoginButton.setPreferredSize(new java.awt.Dimension(100, 50));
+        LoginButton.setRequestFocusEnabled(false);
+        LoginButton.setRolloverEnabled(false);
+        LoginButton.setVerifyInputWhenFocusTarget(false);
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
+        LoginButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LoginButtonKeyPressed(evt);
+            }
+        });
 
-    Opcoes.setText("Opções");
+        Opcoes.setText("Opções");
 
-    CadastrarUsuario.setText("Cadastra Usuario");
-    CadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        CadastrarUsuarioActionPerformed(evt);
-      }
-    });
-    Opcoes.add(CadastrarUsuario);
+        CadastrarUsuario.setText("Cadastra Usuario");
+        CadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarUsuarioActionPerformed(evt);
+            }
+        });
+        Opcoes.add(CadastrarUsuario);
 
-    Sair.setText("Sair");
-    Sair.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        SairActionPerformed(evt);
-      }
-    });
-    Opcoes.add(Sair);
+        Sair.setText("Sair");
+        Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairActionPerformed(evt);
+            }
+        });
+        Opcoes.add(Sair);
 
-    BarraDeMenu.add(Opcoes);
+        BarraDeMenu.add(Opcoes);
 
-    Editar.setText("Editar");
+        Editar.setText("Editar");
 
-    EditarDados.setText("Dados");
-    EditarDados.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        EditarDadosActionPerformed(evt);
-      }
-    });
-    Editar.add(EditarDados);
+        EditarDados.setText("Dados");
+        EditarDados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarDadosActionPerformed(evt);
+            }
+        });
+        Editar.add(EditarDados);
 
-    EditarMaterias.setText("Materias");
-    EditarMaterias.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        EditarMateriasActionPerformed(evt);
-      }
-    });
-    Editar.add(EditarMaterias);
+        EditarMaterias.setText("Materias");
+        EditarMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarMateriasActionPerformed(evt);
+            }
+        });
+        Editar.add(EditarMaterias);
 
-    BarraDeMenu.add(Editar);
+        BarraDeMenu.add(Editar);
 
-    setJMenuBar(BarraDeMenu);
+        setJMenuBar(BarraDeMenu);
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(Desktop)
-      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-          .addContainerGap(131, Short.MAX_VALUE)
-          .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-          .addContainerGap(132, Short.MAX_VALUE)))
-    );
-    layout.setVerticalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(Desktop)
-      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-          .addContainerGap(135, Short.MAX_VALUE)
-          .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, Short.MAX_VALUE)
-          .addContainerGap(137, Short.MAX_VALUE)))
-    );
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Desktop)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(131, Short.MAX_VALUE)
+                    .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addContainerGap(132, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Desktop)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(135, Short.MAX_VALUE)
+                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, Short.MAX_VALUE)
+                    .addContainerGap(137, Short.MAX_VALUE)))
+        );
 
-    pack();
-    setLocationRelativeTo(null);
-  }// </editor-fold>//GEN-END:initComponents
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
   private void CadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuarioActionPerformed
     Cadastrar TelaCadastro = new Cadastrar();
@@ -204,15 +204,15 @@ public class Janela extends javax.swing.JFrame {
     });
   }
 
-  // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JMenuBar BarraDeMenu;
-  private javax.swing.JMenuItem CadastrarUsuario;
-  private javax.swing.JDesktopPane Desktop;
-  private javax.swing.JMenu Editar;
-  private javax.swing.JMenuItem EditarDados;
-  private javax.swing.JMenuItem EditarMaterias;
-  private javax.swing.JButton LoginButton;
-  private javax.swing.JMenu Opcoes;
-  private javax.swing.JMenuItem Sair;
-  // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar BarraDeMenu;
+    private javax.swing.JMenuItem CadastrarUsuario;
+    private javax.swing.JDesktopPane Desktop;
+    private javax.swing.JMenu Editar;
+    private javax.swing.JMenuItem EditarDados;
+    private javax.swing.JMenuItem EditarMaterias;
+    private javax.swing.JButton LoginButton;
+    private javax.swing.JMenu Opcoes;
+    private javax.swing.JMenuItem Sair;
+    // End of variables declaration//GEN-END:variables
 }

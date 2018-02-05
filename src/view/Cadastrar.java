@@ -2,10 +2,6 @@ package view;
 
 import Classes.Dados;
 import Classes.Usuario;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Cadastrar extends javax.swing.JInternalFrame {
   public String login;
@@ -104,7 +100,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
       login = UserName.getText();
       senha = Password.getText();
       
-      Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
+      Dados dados = new Dados("F:\\arquivos\\POO\\Boletim\\teste.db");
       Usuario usuario = new Usuario(login, senha);
       dados.addUsuario(usuario);
       
