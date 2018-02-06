@@ -7,7 +7,7 @@ public class Janela extends javax.swing.JFrame {
   
   private Usuario User;
   private int UserId;
-  private Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
+  private Dados dados = new Dados();
 
   public Janela() {
     initComponents();
@@ -161,9 +161,19 @@ public class Janela extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void CadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuarioActionPerformed
-    Cadastrar TelaCadastro = new Cadastrar(this, true);
-    Desktop.add(TelaCadastro);
-    TelaCadastro.setVisible(true);
+  Cadastrar cadastro = new Cadastrar(this, true);
+  cadastro.setVisible(true);
+
+  if(cadastro.ok){
+    this.User = cadastro.User;
+    this.UserId = cadastro.UserId;
+
+    Desktop.setVisible(true);
+    BarraDeMenu.setVisible(true);
+
+    LoginButton.setVisible(false);
+    Registrar.setVisible(false);
+  }
   }//GEN-LAST:event_CadastrarUsuarioActionPerformed
 
   private void EditarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarDadosActionPerformed

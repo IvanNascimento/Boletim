@@ -13,7 +13,7 @@ public class Login extends javax.swing.JDialog {
   public boolean ok = false;
   public Usuario User;
   public int UserId;
-  Dados dados = new Dados("C:\\Users\\Admin\\Documents\\ivan_luis\\ProjetosGitHub\\Boletim\\teste.db");
+  Dados dados = new Dados();
   
   private void Altenticar(String login, String senha){
     ArrayList<Usuario> a = new ArrayList();

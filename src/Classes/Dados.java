@@ -19,11 +19,8 @@ public class Dados {
   
   private ObjectInputStream input;
   
-  public Dados(String caminho){
-    this.caminho = "";
-    this.dados = null;
-
-    this.caminho = caminho;
+  public Dados(){
+    this.caminho = System.getProperty("user.dir")+"/teste.db";
     this.dados = new ArrayList();
   }
   
