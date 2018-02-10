@@ -4,31 +4,28 @@ import Classes.Dados;
 import Classes.Usuario;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Login extends javax.swing.JDialog {
 
   public String login;
-  public String senha;
+  public char[] senha;
   public boolean ok = false;
   public Usuario User;
   public int UserId;
   Dados dados = new Dados();
   
-  private void Altenticar(String login, String senha){
-    ArrayList<Usuario> a = new ArrayList();
-    a = dados.Carregar();
+  private void Altenticar(String login, char[] senha){
+    ArrayList<Usuario> a = dados.Carregar();
     if(a.isEmpty()){
       Acesso.setText("Sem usuarios cadastrados");
-    }else if(a == null){
-      Acesso.setText("Sem usuarios cadastrados");
-      a = new ArrayList<Usuario>();
     }
     for(int i=0;i<a.size();i++){
         Usuario u = a.get(i);
-        if(UserName.getText().equals(u.getLogin()) && Password.getText().equals(u.getSenha())){
+        if(UserName.getText().equals(u.getLogin()) && Arrays.equals(Password.getPassword(), u.getSenha())){
             this.login = UserName.getText();
-            this.senha = Password.getText();
+            this.senha = Password.getPassword();
             this.User = u;
             this.UserId = i;
             ok = true;
@@ -47,102 +44,105 @@ public class Login extends javax.swing.JDialog {
   }
 
   @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+  private void initComponents() {
 
-        Password = new javax.swing.JPasswordField();
-        Ok = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        UserName = new javax.swing.JTextField();
-        Acesso = new javax.swing.JLabel();
+    Password = new javax.swing.JPasswordField();
+    Ok = new javax.swing.JButton();
+    jLabel1 = new javax.swing.JLabel();
+    jLabel2 = new javax.swing.JLabel();
+    UserName = new javax.swing.JTextField();
+    Acesso = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                formKeyPressed(evt);
-            }
-        });
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+    setTitle("Logar");
+    setBackground(java.awt.Color.gray);
+    setResizable(false);
+    addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(java.awt.event.KeyEvent evt) {
+        formKeyPressed(evt);
+      }
+    });
 
-        Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordActionPerformed(evt);
-            }
-        });
-        Password.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                PasswordKeyPressed(evt);
-            }
-        });
+    Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+    Password.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        PasswordActionPerformed(evt);
+      }
+    });
+    Password.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(java.awt.event.KeyEvent evt) {
+        PasswordKeyPressed(evt);
+      }
+    });
 
-        Ok.setText("Ok");
-        Ok.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Ok.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OkActionPerformed(evt);
-            }
-        });
-        Ok.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                OkKeyPressed(evt);
-            }
-        });
+    Ok.setText("Ok");
+    Ok.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    Ok.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        OkActionPerformed(evt);
+      }
+    });
+    Ok.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(java.awt.event.KeyEvent evt) {
+        OkKeyPressed(evt);
+      }
+    });
 
-        jLabel1.setText("User Name: ");
+    jLabel1.setText("User Name: ");
 
-        jLabel2.setText("Senha: ");
+    jLabel2.setText("Senha: ");
 
-        UserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        UserName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserNameActionPerformed(evt);
-            }
-        });
-        UserName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                UserNameKeyPressed(evt);
-            }
-        });
+    UserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+    UserName.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        UserNameActionPerformed(evt);
+      }
+    });
+    UserName.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(java.awt.event.KeyEvent evt) {
+        UserNameKeyPressed(evt);
+      }
+    });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UserName)
-                    .addComponent(Password)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                    .addComponent(Acesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Acesso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(Ok)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(layout.createSequentialGroup()
+        .addContainerGap(50, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(UserName)
+          .addComponent(Password)
+          .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+          .addComponent(Acesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(Ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addContainerGap(50, Short.MAX_VALUE))
+    );
+    layout.setVerticalGroup(
+      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(layout.createSequentialGroup()
+        .addContainerGap(12, Short.MAX_VALUE)
+        .addComponent(Acesso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+        .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 19, Short.MAX_VALUE)
+        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 19, Short.MAX_VALUE)
+        .addComponent(Ok)
+        .addContainerGap(48, Short.MAX_VALUE))
+    );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+    pack();
+  }// </editor-fold>//GEN-END:initComponents
 
   private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
-    this.Altenticar(UserName.getText(), Password.getText());
+    this.Altenticar(UserName.getText(), Password.getPassword());
   }//GEN-LAST:event_OkActionPerformed
 
   private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
@@ -151,7 +151,7 @@ public class Login extends javax.swing.JDialog {
 
   private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
     if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-      this.Altenticar(UserName.getText(), Password.getText());
+      this.Altenticar(UserName.getText(), Password.getPassword());
     }
   }//GEN-LAST:event_PasswordKeyPressed
 
@@ -161,13 +161,13 @@ public class Login extends javax.swing.JDialog {
 
   private void UserNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserNameKeyPressed
     if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-      this.Altenticar(UserName.getText(), Password.getText());
+      this.Altenticar(UserName.getText(), Password.getPassword());
     }
   }//GEN-LAST:event_UserNameKeyPressed
 
   private void OkKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OkKeyPressed
     if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-      this.Altenticar(UserName.getText(), Password.getText());
+      this.Altenticar(UserName.getText(), Password.getPassword());
     }
   }//GEN-LAST:event_OkKeyPressed
 
@@ -214,12 +214,12 @@ public class Login extends javax.swing.JDialog {
     });
   }
   
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Acesso;
-    private javax.swing.JButton Ok;
-    private javax.swing.JPasswordField Password;
-    private javax.swing.JTextField UserName;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    // End of variables declaration//GEN-END:variables
+  // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JLabel Acesso;
+  private javax.swing.JButton Ok;
+  private javax.swing.JPasswordField Password;
+  private javax.swing.JTextField UserName;
+  private javax.swing.JLabel jLabel1;
+  private javax.swing.JLabel jLabel2;
+  // End of variables declaration//GEN-END:variables
 }

@@ -318,7 +318,7 @@ public class DadosUser extends javax.swing.JInternalFrame {
       dados.setEndereco(EstadoNameText.getText(), CidadeNameText.getText(), BairroNameText.getText(), RuaNameText.getText(), NumCasaNumberText.getText());
       this.User.setDados(dados);
       
-      d.editUser(UserId, User);
+      d.editUsuario(UserId, User);
       
       this.dispose();
     }

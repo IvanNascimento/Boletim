@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Dados {
   
@@ -36,35 +34,33 @@ public class Dados {
     try {
       this.output = new ObjectOutputStream(new FileOutputStream(new File(this.caminho)));
     } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Base de dados não encontrada, criada uma nova");
     }
     
     try {
       output.writeObject(a);
+      this.dados = a;
     } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Erro ao salvar");
     }
 
     try {
       output.flush();
-    } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    try {
       output.close();
     } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Erro ao fechar arquivo");
     }
   }
   public ArrayList<Usuario> Carregar() {
     try {
       this.input = new ObjectInputStream(new FileInputStream(new File(this.caminho)));
     } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Base de dados não encontrada");
       ArrayList a = new ArrayList();
-      a.add(new Usuario("Admim", "admim"));
+      a.add(new Usuario("Admim", "admim".toCharArray()));
       this.Salvar(a);
-      this.Carregar();
+      
+      return this.dados;
     }
     try {
       while(true){
@@ -73,13 +69,17 @@ public class Dados {
         if(input.read() == -1) break;
       }
     } catch (ClassNotFoundException | IOException ex) {
-      this.dados = new ArrayList<Usuario>();
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Base de dados vazia");
+      ArrayList a = new ArrayList();
+      a.add(new Usuario("Admim", "admim".toCharArray()));
+      this.Salvar(a);
+      
+      return this.dados;
     }
     try {
       input.close();
     } catch (IOException ex) {
-      Logger.getLogger(Dados.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Erro ao fechar o arquivo");
     }
     
     return this.dados;
@@ -88,9 +88,8 @@ public class Dados {
     ArrayList<Usuario> list = this.Carregar();
     list.add(u);
     this.Salvar(list);
-    System.out.println(this.Carregar());
   }
-  public void editUser(int i, Usuario user){
+  public void editUsuario(int i, Usuario user){
     ArrayList<Usuario> list = this.Carregar();
     list.set(i, user);
     this.Salvar(list);

@@ -7,13 +7,12 @@ public class Janela extends javax.swing.JFrame {
   
   private Usuario User;
   private int UserId;
-  private Dados dados = new Dados();
+  private final Dados dados = new Dados();
 
   public Janela() {
     initComponents();
     Desktop.setVisible(false);
     BarraDeMenu.setVisible(false);
-    
   }
 
   @SuppressWarnings("unchecked")
@@ -21,6 +20,7 @@ public class Janela extends javax.swing.JFrame {
   private void initComponents() {
 
     Desktop = new javax.swing.JDesktopPane();
+    jPanel1 = new javax.swing.JPanel();
     LoginButton = new javax.swing.JButton();
     Registrar = new javax.swing.JButton();
     BarraDeMenu = new javax.swing.JMenuBar();
@@ -41,20 +41,21 @@ public class Janela extends javax.swing.JFrame {
     setMinimumSize(new java.awt.Dimension(700, 600));
     setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
     setPreferredSize(new java.awt.Dimension(700, 600));
-    setSize(new java.awt.Dimension(700, 600));
+    setSize(new java.awt.Dimension(1000, 900));
 
     Desktop.setBackground(new java.awt.Color(51, 0, 204));
     Desktop.setFocusable(false);
+    Desktop.setVerifyInputWhenFocusTarget(false);
 
     javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
     Desktop.setLayout(DesktopLayout);
     DesktopLayout.setHorizontalGroup(
       DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 366, Short.MAX_VALUE)
+      .addGap(0, 700, Short.MAX_VALUE)
     );
     DesktopLayout.setVerticalGroup(
       DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 324, Short.MAX_VALUE)
+      .addGap(0, 579, Short.MAX_VALUE)
     );
 
     LoginButton.setText("Login");
@@ -80,6 +81,27 @@ public class Janela extends javax.swing.JFrame {
         RegistrarActionPerformed(evt);
       }
     });
+
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addContainerGap(25, Short.MAX_VALUE)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(LoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(Registrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap(25, Short.MAX_VALUE))
+    );
+    jPanel1Layout.setVerticalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addContainerGap(50, Short.MAX_VALUE)
+        .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+        .addComponent(Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(50, Short.MAX_VALUE))
+    );
 
     Opcoes.setText("Opções");
 
@@ -138,22 +160,18 @@ public class Janela extends javax.swing.JFrame {
       .addComponent(Desktop)
       .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-          .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
-          .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+          .addGap(240, 240, 240)
+          .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addGap(241, 241, 241)))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(Desktop)
       .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-          .addGap(63, 63, 63)
-          .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-          .addGap(70, 70, 70)
-          .addComponent(Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-          .addGap(66, 66, 66)))
+          .addGap(183, 183, 183)
+          .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addGap(176, 176, 176)))
     );
 
     pack();
@@ -161,19 +179,20 @@ public class Janela extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void CadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuarioActionPerformed
-  Cadastrar cadastro = new Cadastrar(this, true);
-  cadastro.setVisible(true);
+    Cadastrar cadastro = new Cadastrar(this, true);
+    cadastro.setLocationRelativeTo(null);
+    cadastro.setVisible(true);
 
-  if(cadastro.ok){
-    this.User = cadastro.User;
-    this.UserId = cadastro.UserId;
+    if(cadastro.ok){
+      this.User = cadastro.User;
+      this.UserId = cadastro.UserId;
 
-    Desktop.setVisible(true);
-    BarraDeMenu.setVisible(true);
+      Desktop.setVisible(true);
+      BarraDeMenu.setVisible(true);
 
-    LoginButton.setVisible(false);
-    Registrar.setVisible(false);
-  }
+      LoginButton.setVisible(false);
+      Registrar.setVisible(false);
+    }
   }//GEN-LAST:event_CadastrarUsuarioActionPerformed
 
   private void EditarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarDadosActionPerformed
@@ -185,6 +204,7 @@ public class Janela extends javax.swing.JFrame {
 
   private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
     Login login = new Login(this,true);
+    login.setLocationRelativeTo(null);
     login.setVisible(true);
     
     if(login.ok){
@@ -226,19 +246,20 @@ public class Janela extends javax.swing.JFrame {
   }//GEN-LAST:event_EditarMateriasActionPerformed
 
     private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
-        Cadastrar cadastro = new Cadastrar(this, true);
-        cadastro.setVisible(true);
-        
-        if(cadastro.ok){
-          this.User = cadastro.User;
-          this.UserId = cadastro.UserId;
-          
-          Desktop.setVisible(true);
-          BarraDeMenu.setVisible(true);
-          
-          LoginButton.setVisible(false);
-          Registrar.setVisible(false);
-        }
+      Cadastrar cadastro = new Cadastrar(this, true);
+      cadastro.setLocationRelativeTo(null);
+      cadastro.setVisible(true);
+
+      if(cadastro.ok){
+        this.User = cadastro.User;
+        this.UserId = cadastro.UserId;
+
+        Desktop.setVisible(true);
+        BarraDeMenu.setVisible(true);
+
+        LoginButton.setVisible(false);
+        Registrar.setVisible(false);
+      }
     }//GEN-LAST:event_RegistrarActionPerformed
 
   private void TrocarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrocarUsuarioActionPerformed
@@ -250,6 +271,7 @@ public class Janela extends javax.swing.JFrame {
     Registrar.setVisible(true);
     
     Login login = new Login(this,true);
+    login.setLocationRelativeTo(null);
     login.setVisible(true);
     
     if(login.ok){
@@ -296,5 +318,6 @@ public class Janela extends javax.swing.JFrame {
   private javax.swing.JButton Registrar;
   private javax.swing.JMenuItem Sair;
   private javax.swing.JMenuItem TrocarUsuario;
+  private javax.swing.JPanel jPanel1;
   // End of variables declaration//GEN-END:variables
 }

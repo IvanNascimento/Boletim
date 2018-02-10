@@ -250,7 +250,7 @@ public class Disciplinas extends javax.swing.JInternalFrame {
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
-    close.setText("Fechar");
+    close.setText("Salvar");
     close.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         closeActionPerformed(evt);
@@ -303,7 +303,7 @@ public class Disciplinas extends javax.swing.JInternalFrame {
 
   private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
     Dados dados = new Dados();
-    dados.editUser(this.UserId, this.User);
+    dados.editUsuario(this.UserId, this.User);
     
     this.dispose();
   }//GEN-LAST:event_closeActionPerformed

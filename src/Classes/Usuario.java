@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class Usuario implements Serializable{
   private String login;
-  private String senha;
+  private char[] senha;
   private Aluno dados;
   
-  public Usuario(String login, String senha){
+  public Usuario(String login, char[] senha){
     this.login = login;
     this.senha = senha;
     this.dados = new Aluno();
@@ -15,13 +15,13 @@ public class Usuario implements Serializable{
   public void setLogin(String login){
     this.login = login;
   }
-  public void setSenha(String senha){
+  public void setSenha(char[] senha){
     this.senha = senha;
   }
   public String getLogin(){
     return this.login;
   }
-  public String getSenha(){
+  public char[] getSenha(){
     return this.senha;
   }
   public void setDados(Aluno a){
@@ -31,9 +31,4 @@ public class Usuario implements Serializable{
     return this.dados;
   }
 
-  @Override
-  public String toString() {
-    return "Login: "+this.getLogin()+"\tSenha: "+this.getSenha()+"\tNotas: "+this.getDados();
-  }
-  
 }
